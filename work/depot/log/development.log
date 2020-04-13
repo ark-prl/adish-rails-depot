@@ -1453,3 +1453,208 @@ Processing by CartsController#show as HTML
 Completed 200 OK in 120ms (Views: 115.3ms | ActiveRecord: 0.9ms)
 
 
+Started GET "/" for ::1 at 2020-04-13 15:28:41 +0800
+  [1m[35m (54.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StoreController#index as HTML
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (755.7ms)
+Completed 200 OK in 1030ms (Views: 1003.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-13 15:33:48 +0800
+Processing by StoreController#index as HTML
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (29.4ms)
+  [1m[36mLineItem Load (0.3ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ?[0m  [["cart_id", 7]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered carts/_cart.html.erb (55.5ms)
+Completed 200 OK in 326ms (Views: 292.6ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/line_items?product_id=1" for ::1 at 2020-04-13 15:33:51 +0800
+Processing by LineItemsController#create as HTML
+  Parameters: {"authenticity_token"=>"mAWumJINrLi/PAXKTeSs4TiAQD41RRelYQnd1zQlPRxYaJ7xoWO1Odyu/+Iv1BppPxjICwG+ImQpgTv/i9PHWw==", "product_id"=>"1"}
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLineItem Load (0.3ms)[0m  [1m[34mSELECT  "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ? AND "line_items"."product_id" = ? LIMIT ?[0m  [["cart_id", 7], ["product_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (4.6ms)[0m  [1m[32mINSERT INTO "line_items" ("product_id", "cart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 1], ["cart_id", 7], ["created_at", "2020-04-13 07:33:51.569902"], ["updated_at", "2020-04-13 07:33:51.569902"]]
+  [1m[35m (162.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/carts/7
+Completed 302 Found in 201ms (ActiveRecord: 169.2ms)
+
+
+Started GET "/carts/7" for ::1 at 2020-04-13 15:33:51 +0800
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering carts/show.html.erb within layouts/application
+  [1m[36mLineItem Load (0.3ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ?[0m  [["cart_id", 7]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of line_items/_line_item.html.erb [1 times] (3.3ms)
+  Rendered carts/_cart.html.erb (10.6ms)
+  Rendered carts/show.html.erb within layouts/application (16.1ms)
+  Rendered collection of line_items/_line_item.html.erb [1 times] (0.4ms)
+  Rendered carts/_cart.html.erb (4.6ms)
+Completed 200 OK in 108ms (Views: 102.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2020-04-13 15:33:54 +0800
+Processing by StoreController#index as HTML
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (15.9ms)
+  [1m[36mLineItem Load (0.3ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ?[0m  [["cart_id", 7]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of line_items/_line_item.html.erb [1 times] (3.8ms)
+  Rendered carts/_cart.html.erb (13.7ms)
+Completed 200 OK in 119ms (Views: 113.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2020-04-13 15:40:14 +0800
+Processing by StoreController#index as HTML
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (31.8ms)
+  [1m[36mLineItem Load (0.3ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ?[0m  [["cart_id", 7]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of line_items/_line_item.html.erb [1 times] (6.5ms)
+  Rendered carts/_cart.html.erb (43.2ms)
+Completed 200 OK in 211ms (Views: 177.3ms | ActiveRecord: 6.7ms)
+
+
+Started POST "/line_items?product_id=1" for ::1 at 2020-04-13 15:40:17 +0800
+Processing by LineItemsController#create as HTML
+  Parameters: {"authenticity_token"=>"1Rf5/lZsVMYZ2iALnLcLe0VRpEjFLLU5nJgFRJJOG34VesmXZQJNR3pI2iP+h73zQsksffHXgPjUEONsLbjhOQ==", "product_id"=>"1"}
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLineItem Load (0.6ms)[0m  [1m[34mSELECT  "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ? AND "line_items"."product_id" = ? LIMIT ?[0m  [["cart_id", 7], ["product_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (60.1ms)[0m  [1m[33mUPDATE "line_items" SET "quantity" = ?, "updated_at" = ? WHERE "line_items"."id" = ?[0m  [["quantity", 2], ["updated_at", "2020-04-13 07:40:17.397794"], ["id", 15]]
+  [1m[35m (91.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 175ms (ActiveRecord: 153.5ms)
+
+
+Started GET "/" for ::1 at 2020-04-13 15:40:17 +0800
+Processing by StoreController#index as HTML
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (18.3ms)
+  [1m[36mLineItem Load (0.3ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ?[0m  [["cart_id", 7]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of line_items/_line_item.html.erb [1 times] (3.9ms)
+  Rendered carts/_cart.html.erb (13.2ms)
+Completed 200 OK in 125ms (Views: 119.2ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/line_items?product_id=3" for ::1 at 2020-04-13 15:40:20 +0800
+Processing by LineItemsController#create as HTML
+  Parameters: {"authenticity_token"=>"u6QTLSDHPnJz6WphDre2bU8JzHDH7kCqiwfvEdaoBJF7ySNEE6kn8xB7kElshwDlSJFERfMVdWvDjwk5aV7+1g==", "product_id"=>"3"}
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mLineItem Load (0.4ms)[0m  [1m[34mSELECT  "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ? AND "line_items"."product_id" = ? LIMIT ?[0m  [["cart_id", 7], ["product_id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "line_items" ("product_id", "cart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 3], ["cart_id", 7], ["created_at", "2020-04-13 07:40:20.921868"], ["updated_at", "2020-04-13 07:40:20.921868"]]
+  [1m[35m (90.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 105ms (ActiveRecord: 93.1ms)
+
+
+Started GET "/" for ::1 at 2020-04-13 15:40:21 +0800
+Processing by StoreController#index as HTML
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (16.1ms)
+  [1m[36mLineItem Load (0.2ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ?[0m  [["cart_id", 7]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered collection of line_items/_line_item.html.erb [2 times] (8.8ms)
+  Rendered carts/_cart.html.erb (16.7ms)
+Completed 200 OK in 146ms (Views: 138.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2020-04-13 16:03:35 +0800
+Processing by StoreController#index as HTML
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (43.2ms)
+  [1m[36mLineItem Load (0.5ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ?[0m  [["cart_id", 7]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered collection of line_items/_line_item.html.erb [2 times] (8.9ms)
+  Rendered carts/_cart.html.erb (48.6ms)
+Completed 200 OK in 236ms (Views: 187.4ms | ActiveRecord: 7.6ms)
+
+
+Started POST "/line_items?product_id=1" for ::1 at 2020-04-13 16:03:51 +0800
+Processing by LineItemsController#create as JS
+  Parameters: {"authenticity_token"=>"nqdod6TFKPBiRCkt1DS8sVNgdNxvdIR8+jM9DxUxuOheylgel6sxcQHW0wW2BAo5VPj86VuPsb2yu9snqsdCrw==", "product_id"=>"1"}
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLineItem Load (0.4ms)[0m  [1m[34mSELECT  "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ? AND "line_items"."product_id" = ? LIMIT ?[0m  [["cart_id", 7], ["product_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (4.7ms)[0m  [1m[33mUPDATE "line_items" SET "quantity" = ?, "updated_at" = ? WHERE "line_items"."id" = ?[0m  [["quantity", 3], ["updated_at", "2020-04-13 08:03:51.577393"], ["id", 15]]
+  [1m[35m (105.3ms)[0m  [1m[36mcommit transaction[0m
+  Rendering line_items/create.js.coffee
+  [1m[36mLineItem Load (0.3ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ?[0m  [["cart_id", 7]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered collection of line_items/_line_item.html.erb [2 times] (6.1ms)
+  Rendered carts/_cart.html.erb (13.9ms)
+  Rendered line_items/create.js.coffee (1555.0ms)
+Completed 200 OK in 1703ms (Views: 1571.1ms | ActiveRecord: 112.0ms)
+
+
+Started POST "/line_items?product_id=3" for ::1 at 2020-04-13 16:03:58 +0800
+Processing by LineItemsController#create as JS
+  Parameters: {"authenticity_token"=>"nqdod6TFKPBiRCkt1DS8sVNgdNxvdIR8+jM9DxUxuOheylgel6sxcQHW0wW2BAo5VPj86VuPsb2yu9snqsdCrw==", "product_id"=>"3"}
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mLineItem Load (0.4ms)[0m  [1m[34mSELECT  "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ? AND "line_items"."product_id" = ? LIMIT ?[0m  [["cart_id", 7], ["product_id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[33mUPDATE "line_items" SET "quantity" = ?, "updated_at" = ? WHERE "line_items"."id" = ?[0m  [["quantity", 2], ["updated_at", "2020-04-13 08:03:58.741253"], ["id", 16]]
+  [1m[35m (68.9ms)[0m  [1m[36mcommit transaction[0m
+  Rendering line_items/create.js.coffee
+  [1m[36mLineItem Load (0.5ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ?[0m  [["cart_id", 7]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered collection of line_items/_line_item.html.erb [2 times] (5.7ms)
+  Rendered carts/_cart.html.erb (16.0ms)
+  Rendered line_items/create.js.coffee (201.5ms)
+Completed 200 OK in 309ms (Views: 219.0ms | ActiveRecord: 72.3ms)
+
+
+Started POST "/line_items?product_id=2" for ::1 at 2020-04-13 16:04:06 +0800
+Processing by LineItemsController#create as JS
+  Parameters: {"authenticity_token"=>"nqdod6TFKPBiRCkt1DS8sVNgdNxvdIR8+jM9DxUxuOheylgel6sxcQHW0wW2BAo5VPj86VuPsb2yu9snqsdCrw==", "product_id"=>"2"}
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLineItem Load (0.4ms)[0m  [1m[34mSELECT  "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ? AND "line_items"."product_id" = ? LIMIT ?[0m  [["cart_id", 7], ["product_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (4.8ms)[0m  [1m[32mINSERT INTO "line_items" ("product_id", "cart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 2], ["cart_id", 7], ["created_at", "2020-04-13 08:04:06.552024"], ["updated_at", "2020-04-13 08:04:06.552024"]]
+  [1m[35m (132.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering line_items/create.js.coffee
+  [1m[36mLineItem Load (0.4ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ?[0m  [["cart_id", 7]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered collection of line_items/_line_item.html.erb [3 times] (7.2ms)
+  Rendered carts/_cart.html.erb (18.5ms)
+  Rendered line_items/create.js.coffee (203.0ms)
+Completed 200 OK in 378ms (Views: 219.2ms | ActiveRecord: 139.1ms)
+
+
