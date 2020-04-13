@@ -808,3 +808,648 @@ Processing by StoreController#index as HTML
 Completed 200 OK in 600ms (Views: 551.7ms | ActiveRecord: 3.2ms)
 
 
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddQuantityToLineItems (20200413002823)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "line_items" ADD "quantity" integer DEFAULT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_line_items_on_cart_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_line_items_on_cart_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_line_items_on_product_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_line_items_on_product_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddQuantityToLineItems (20200413002823)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "line_items" ADD "quantity" integer DEFAULT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddQuantityToLineItems (20200413002823)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "line_items" ADD "quantity" integer DEFAULT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_line_items_on_cart_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_line_items_on_cart_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_line_items_on_product_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_line_items_on_product_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddQuantityToLineItems (20200413002823)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "line_items" ADD "quantity" integer DEFAULT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_line_items_on_cart_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_line_items_on_cart_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_line_items_on_product_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_line_items_on_product_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddQuantityToLineItems (20200413002823)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aline_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer DEFAULT NULL, "cart_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "quantity" integer DEFAULT 1)[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_line_items_on_cart_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_line_items_on_cart_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_line_items_on_product_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_line_items_on_product_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aline_items_on_cart_id" ON "aline_items" ("cart_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aline_items_on_product_id" ON "aline_items" ("product_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aline_items" ("id","product_id","cart_id","created_at","updated_at","quantity")
+                     SELECT "id","product_id","cart_id","created_at","updated_at","quantity" FROM "line_items"[0m
+  [1m[35m (4.7ms)[0m  [1m[35mDROP TABLE "line_items"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "line_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer DEFAULT NULL, "cart_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_aline_items_on_product_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_aline_items_on_product_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_aline_items_on_cart_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_aline_items_on_cart_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_line_items_on_product_id" ON "line_items" ("product_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_line_items_on_product_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_line_items_on_product_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_line_items_on_cart_id" ON "line_items" ("cart_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "line_items" ("id","product_id","cart_id","created_at","updated_at")
+                     SELECT "id","product_id","cart_id","created_at","updated_at" FROM "aline_items"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aline_items"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200413002823"]]
+  [1m[35m (131.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_line_items_on_cart_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_line_items_on_cart_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_line_items_on_product_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_line_items_on_product_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_line_items_on_cart_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_line_items_on_cart_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_line_items_on_product_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_line_items_on_product_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CombineItemsInCart (20200413004246)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCart Load (0.6ms)[0m  [1m[34mSELECT "carts".* FROM "carts"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM(quantity) AS sum_quantity, "line_items"."product_id" AS line_items_product_id FROM "line_items" WHERE "line_items"."cart_id" = ? GROUP BY "line_items"."product_id"[0m  [["cart_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CombineItemsInCart (20200413004246)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT "carts".* FROM "carts"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM(quantity) AS sum_quantity, "line_items"."product_id" AS line_items_product_id FROM "line_items" WHERE "line_items"."cart_id" = ? GROUP BY "line_items"."product_id"[0m  [["cart_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddQuantityToLineItems (20200413002823)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aline_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer DEFAULT NULL, "cart_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_line_items_on_cart_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_line_items_on_cart_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_line_items_on_product_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_line_items_on_product_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aline_items_on_cart_id" ON "aline_items" ("cart_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aline_items_on_product_id" ON "aline_items" ("product_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "aline_items" ("id","product_id","cart_id","created_at","updated_at")
+                     SELECT "id","product_id","cart_id","created_at","updated_at" FROM "line_items"[0m
+  [1m[35m (1.4ms)[0m  [1m[35mDROP TABLE "line_items"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "line_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer DEFAULT NULL, "cart_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_aline_items_on_product_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_aline_items_on_product_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_aline_items_on_cart_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_aline_items_on_cart_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_line_items_on_product_id" ON "line_items" ("product_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_line_items_on_product_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_line_items_on_product_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_line_items_on_cart_id" ON "line_items" ("cart_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "line_items" ("id","product_id","cart_id","created_at","updated_at")
+                     SELECT "id","product_id","cart_id","created_at","updated_at" FROM "aline_items"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "aline_items"[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20200413002823"]]
+  [1m[35m (84.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_line_items_on_cart_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_line_items_on_cart_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_line_items_on_product_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_line_items_on_product_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddQuantityToLineItems (20200413002823)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (4.9ms)[0m  [1m[35mALTER TABLE "line_items" ADD "quantity" integer DEFAULT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200413002823"]]
+  [1m[35m (242.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CombineItemsInCart (20200413004246)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT "carts".* FROM "carts"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("line_items"."quantity") AS sum_quantity, "line_items"."product_id" AS line_items_product_id FROM "line_items" WHERE "line_items"."cart_id" = ? GROUP BY "line_items"."product_id"[0m  [["cart_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("line_items"."quantity") AS sum_quantity, "line_items"."product_id" AS line_items_product_id FROM "line_items" WHERE "line_items"."cart_id" = ? GROUP BY "line_items"."product_id"[0m  [["cart_id", 2]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("line_items"."quantity") AS sum_quantity, "line_items"."product_id" AS line_items_product_id FROM "line_items" WHERE "line_items"."cart_id" = ? GROUP BY "line_items"."product_id"[0m  [["cart_id", 3]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("line_items"."quantity") AS sum_quantity, "line_items"."product_id" AS line_items_product_id FROM "line_items" WHERE "line_items"."cart_id" = ? GROUP BY "line_items"."product_id"[0m  [["cart_id", 4]]
+  [1m[35mSQL (1.2ms)[0m  [1m[31mDELETE FROM "line_items" WHERE "line_items"."cart_id" = ? AND "line_items"."product_id" = ?[0m  [["cart_id", 4], ["product_id", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "line_items" ("product_id", "cart_id", "created_at", "updated_at", "quantity") VALUES (?, ?, ?, ?, ?)[0m  [["product_id", 1], ["cart_id", 4], ["created_at", "2020-04-13 00:44:47.268734"], ["updated_at", "2020-04-13 00:44:47.268734"], ["quantity", 2]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200413004246"]]
+  [1m[35m (90.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_line_items_on_cart_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_line_items_on_cart_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_line_items_on_product_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_line_items_on_product_id' AND type='index'
+[0m
+Started GET "/" for ::1 at 2020-04-13 08:45:14 +0800
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StoreController#index as HTML
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (717.6ms)
+Completed 200 OK in 954ms (Views: 874.4ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/line_items?product_id=1" for ::1 at 2020-04-13 08:45:18 +0800
+Processing by LineItemsController#create as HTML
+  Parameters: {"authenticity_token"=>"3ZqP57D21bmJjTPGkTmEGvmuQd7WUvmo+A3sZm1tIyUd97+Og5jMOOofye7zCTKS/jbJ6+KpzGmwhQpO0pvZYg==", "product_id"=>"1"}
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLineItem Load (5.8ms)[0m  [1m[34mSELECT  "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ? AND "line_items"."product_id" = ? LIMIT ?[0m  [["cart_id", 4], ["product_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.5ms)[0m  [1m[33mUPDATE "line_items" SET "quantity" = ?, "updated_at" = ? WHERE "line_items"."id" = ?[0m  [["quantity", 3], ["updated_at", "2020-04-13 00:45:18.926928"], ["id", 7]]
+  [1m[35m (114.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/carts/4
+Completed 302 Found in 444ms (ActiveRecord: 127.6ms)
+
+
+Started GET "/carts/4" for ::1 at 2020-04-13 08:45:19 +0800
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering carts/show.html.erb within layouts/application
+  [1m[36mLineItem Load (0.5ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ?[0m  [["cart_id", 4]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered carts/show.html.erb within layouts/application (20.7ms)
+Completed 200 OK in 189ms (Views: 175.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2020-04-13 08:45:35 +0800
+Processing by StoreController#index as HTML
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 180ms (Views: 172.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/line_items?product_id=1" for ::1 at 2020-04-13 08:45:36 +0800
+Processing by LineItemsController#create as HTML
+  Parameters: {"authenticity_token"=>"IGQUDGPmHZsuNTzPRh4PW58D9wvbh5uFFdRnqAp/M1T+s/Gsupblz3wlOuBCQ6COGth/TJ7JyFZSo2qLyT4zcQ==", "product_id"=>"1"}
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLineItem Load (0.3ms)[0m  [1m[34mSELECT  "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ? AND "line_items"."product_id" = ? LIMIT ?[0m  [["cart_id", 4], ["product_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (5.3ms)[0m  [1m[33mUPDATE "line_items" SET "quantity" = ?, "updated_at" = ? WHERE "line_items"."id" = ?[0m  [["quantity", 4], ["updated_at", "2020-04-13 00:45:36.517258"], ["id", 7]]
+  [1m[35m (132.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/carts/4
+Completed 302 Found in 150ms (ActiveRecord: 139.2ms)
+
+
+Started GET "/carts/4" for ::1 at 2020-04-13 08:45:36 +0800
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering carts/show.html.erb within layouts/application
+  [1m[36mLineItem Load (0.3ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ?[0m  [["cart_id", 4]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered carts/show.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 110ms (Views: 101.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2020-04-13 08:45:43 +0800
+Processing by StoreController#index as HTML
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (27.3ms)
+Completed 200 OK in 136ms (Views: 129.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/line_items?product_id=3" for ::1 at 2020-04-13 08:45:46 +0800
+Processing by LineItemsController#create as HTML
+  Parameters: {"authenticity_token"=>"B1P0qrcjTvcuNa57LuKul2VErabMZJY5OYjSTdhRJlfZhBEKblO2o3wlqFQqvwFC4J8l4Ykqxep+/99uGxAmcg==", "product_id"=>"3"}
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mLineItem Load (0.3ms)[0m  [1m[34mSELECT  "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ? AND "line_items"."product_id" = ? LIMIT ?[0m  [["cart_id", 4], ["product_id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (4.8ms)[0m  [1m[32mINSERT INTO "line_items" ("product_id", "cart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 3], ["cart_id", 4], ["created_at", "2020-04-13 00:45:46.534823"], ["updated_at", "2020-04-13 00:45:46.534823"]]
+  [1m[35m (145.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/carts/4
+Completed 302 Found in 166ms (ActiveRecord: 151.6ms)
+
+
+Started GET "/carts/4" for ::1 at 2020-04-13 08:45:46 +0800
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCart Load (0.6ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering carts/show.html.erb within layouts/application
+  [1m[36mLineItem Load (1.3ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ?[0m  [["cart_id", 4]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered carts/show.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 123ms (Views: 110.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/carts/wibble" for ::1 at 2020-04-13 08:50:13 +0800
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"wibble"}
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Cart with 'id'=wibble):
+  
+app/controllers/carts_controller.rb:67:in `set_cart'
+Started GET "/carts/wibble" for ::1 at 2020-04-13 08:57:21 +0800
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"wibble"}
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Attempt to access invalid cart wibble
+Redirected to http://localhost:3000/
+Completed 302 Found in 37ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/" for ::1 at 2020-04-13 08:57:21 +0800
+Processing by StoreController#index as HTML
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (60.8ms)
+Completed 200 OK in 201ms (Views: 182.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2020-04-13 09:11:15 +0800
+Processing by StoreController#index as HTML
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (57.9ms)
+Completed 200 OK in 339ms (Views: 313.2ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/cart" for ::1 at 2020-04-13 09:11:38 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/cart"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/line_items?product_id=1" for ::1 at 2020-04-13 09:11:42 +0800
+Processing by LineItemsController#create as HTML
+  Parameters: {"authenticity_token"=>"exYvoU80TQX/viVkroJnzwaJIw/W6k+ZH2HofpnhLHq7ex/IfFpUhJws30zMstFHARGrOuIRelhX6Q5WJhfWPQ==", "product_id"=>"1"}
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLineItem Load (0.3ms)[0m  [1m[34mSELECT  "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ? AND "line_items"."product_id" = ? LIMIT ?[0m  [["cart_id", 4], ["product_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (4.7ms)[0m  [1m[33mUPDATE "line_items" SET "quantity" = ?, "updated_at" = ? WHERE "line_items"."id" = ?[0m  [["quantity", 5], ["updated_at", "2020-04-13 01:11:42.731809"], ["id", 7]]
+  [1m[35m (122.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/carts/4
+Completed 302 Found in 177ms (ActiveRecord: 130.7ms)
+
+
+Started GET "/carts/4" for ::1 at 2020-04-13 09:11:42 +0800
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering carts/show.html.erb within layouts/application
+  [1m[36mLineItem Load (0.6ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ?[0m  [["cart_id", 4]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered carts/show.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 112ms (Views: 105.3ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/carts/4" for ::1 at 2020-04-13 09:11:48 +0800
+Processing by CartsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"qX8CooYDoNb5jw4vkDseCSDx8M9TRSLa7h27uSPVh+tpEjLLtW25V5od9AfyC6iBJ2l4+me+FxumlV2RnCN9rA==", "id"=>"4"}
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLineItem Load (0.2ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ?[0m  [["cart_id", 4]]
+  [1m[35mSQL (1.3ms)[0m  [1m[31mDELETE FROM "line_items" WHERE "line_items"."id" = ?[0m  [["id", 7]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "line_items" WHERE "line_items"."id" = ?[0m  [["id", 8]]
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "carts" WHERE "carts"."id" = ?[0m  [["id", 4]]
+  [1m[35m (66.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 81ms (ActiveRecord: 69.3ms)
+
+
+Started GET "/" for ::1 at 2020-04-13 09:11:48 +0800
+Processing by StoreController#index as HTML
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 140ms (Views: 135.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/line_items?product_id=1" for ::1 at 2020-04-13 09:14:15 +0800
+Processing by LineItemsController#create as HTML
+  Parameters: {"authenticity_token"=>"RpdR0qCGL7xCTmSyXmVSCsW/scbB22mNlFu0ZbMeyCmG+mG7k+g2PSHcnpo8VeSCwic58/UgXEzc01JNDOgybg==", "product_id"=>"1"}
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.7ms)[0m  [1m[32mINSERT INTO "carts" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-04-13 01:14:16.104547"], ["updated_at", "2020-04-13 01:14:16.104547"]]
+  [1m[35m (140.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLineItem Load (0.3ms)[0m  [1m[34mSELECT  "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ? AND "line_items"."product_id" = ? LIMIT ?[0m  [["cart_id", 5], ["product_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "line_items" ("product_id", "cart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 1], ["cart_id", 5], ["created_at", "2020-04-13 01:14:16.294763"], ["updated_at", "2020-04-13 01:14:16.294763"]]
+  [1m[35m (74.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/carts/5
+Completed 302 Found in 288ms (ActiveRecord: 226.5ms)
+
+
+Started GET "/carts/5" for ::1 at 2020-04-13 09:14:16 +0800
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering carts/show.html.erb within layouts/application
+  [1m[36mLineItem Load (0.4ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ?[0m  [["cart_id", 5]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered carts/show.html.erb within layouts/application (19.9ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `total_price' for #<LineItem:0x000000000d0b3f30>):
+     9:       <tr>
+    10:         <td class="quantity"><%= line_item.quantity %></td>
+    11:         <td><%= line_item.product.title %></td>
+    12:         <td class="price"><%= number_to_currency(line_item.total_price) %></td>
+    13:       </tr>
+    14:     <% end %>
+    15:     <tfoot>
+  
+app/views/carts/show.html.erb:12:in `block in _app_views_carts_show_html_erb__1000868702_109096220'
+app/views/carts/show.html.erb:8:in `_app_views_carts_show_html_erb__1000868702_109096220'
+Started GET "/" for ::1 at 2020-04-13 09:19:36 +0800
+Processing by StoreController#index as HTML
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (35.0ms)
+Completed 200 OK in 413ms (Views: 401.2ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/line_items?product_id=1" for ::1 at 2020-04-13 09:19:38 +0800
+Processing by LineItemsController#create as HTML
+  Parameters: {"authenticity_token"=>"KqpMSLa6kmgIpmUZRYzRDV8MrbcUXF8CqJS/LynWF3/qx3whhdSL6Ws0nzEnvGeFWJQlgiCnasPgHFkHliDtOA==", "product_id"=>"1"}
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLineItem Load (0.3ms)[0m  [1m[34mSELECT  "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ? AND "line_items"."product_id" = ? LIMIT ?[0m  [["cart_id", 5], ["product_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.6ms)[0m  [1m[33mUPDATE "line_items" SET "quantity" = ?, "updated_at" = ? WHERE "line_items"."id" = ?[0m  [["quantity", 2], ["updated_at", "2020-04-13 01:19:38.959576"], ["id", 9]]
+  [1m[35m (88.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/carts/5
+Completed 302 Found in 143ms (ActiveRecord: 92.8ms)
+
+
+Started GET "/carts/5" for ::1 at 2020-04-13 09:19:39 +0800
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering carts/show.html.erb within layouts/application
+  [1m[36mLineItem Load (0.4ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ?[0m  [["cart_id", 5]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered carts/show.html.erb within layouts/application (23.2ms)
+Completed 200 OK in 217ms (Views: 198.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/carts/5" for ::1 at 2020-04-13 09:20:06 +0800
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering carts/show.html.erb within layouts/application
+  [1m[36mLineItem Load (0.3ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ?[0m  [["cart_id", 5]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered carts/show.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 272ms (Views: 265.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2020-04-13 09:20:13 +0800
+Processing by StoreController#index as HTML
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 96ms (Views: 92.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/line_items?product_id=3" for ::1 at 2020-04-13 09:20:15 +0800
+Processing by LineItemsController#create as HTML
+  Parameters: {"authenticity_token"=>"UAin1reHNU4qeFQec0pQrOFwxzKN16+9Wzxmr5+Rma2O30J2bvfNGnhoUjF3F/95ZKtPdciZ/G4cS2uMXNCZiA==", "product_id"=>"3"}
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mLineItem Load (0.3ms)[0m  [1m[34mSELECT  "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ? AND "line_items"."product_id" = ? LIMIT ?[0m  [["cart_id", 5], ["product_id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (4.9ms)[0m  [1m[32mINSERT INTO "line_items" ("product_id", "cart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 3], ["cart_id", 5], ["created_at", "2020-04-13 01:20:15.483909"], ["updated_at", "2020-04-13 01:20:15.483909"]]
+  [1m[35m (239.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/carts/5
+Completed 302 Found in 260ms (ActiveRecord: 245.7ms)
+
+
+Started GET "/carts/5" for ::1 at 2020-04-13 09:20:15 +0800
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering carts/show.html.erb within layouts/application
+  [1m[36mLineItem Load (0.3ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ?[0m  [["cart_id", 5]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered carts/show.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 120ms (Views: 115.3ms | ActiveRecord: 0.9ms)
+
+
