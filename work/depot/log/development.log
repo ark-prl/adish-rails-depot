@@ -1658,3 +1658,402 @@ Processing by LineItemsController#create as JS
 Completed 200 OK in 378ms (Views: 219.2ms | ActiveRecord: 139.1ms)
 
 
+Started GET "/" for ::1 at 2020-04-13 17:08:45 +0800
+Processing by StoreController#index as HTML
+  [1m[36mCart Load (0.5ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (137.2ms)
+  [1m[36mLineItem Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "line_items" WHERE "line_items"."cart_id" = ? LIMIT ?[0m  [["cart_id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE LineItem Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "line_items" WHERE "line_items"."cart_id" = ? LIMIT ?[0m  [["cart_id", 7], ["LIMIT", 1]]
+  [1m[36mLineItem Load (0.4ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ?[0m  [["cart_id", 7]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered collection of line_items/_line_item.html.erb [3 times] (65.6ms)
+  Rendered carts/_cart.html.erb (157.8ms)
+Completed 200 OK in 2148ms (Views: 2016.7ms | ActiveRecord: 20.0ms)
+
+
+Started GET "/cable" for ::1 at 2020-04-13 17:08:49 +0800
+Started GET "/cable/" [WebSocket] for ::1 at 2020-04-13 17:08:50 +0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Subscription class not found: "ProductsChannel"
+Started POST "/line_items?product_id=1" for ::1 at 2020-04-13 17:08:52 +0800
+Processing by LineItemsController#create as JS
+  Parameters: {"authenticity_token"=>"LJJDTJD/ItK/i3prSqIapnA07ybZyStYz4xPuMrfI2js/3Mlo5E7U9wZgEMokqwud6xnE+0yHpmHBKmQdSnZLw==", "product_id"=>"1"}
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLineItem Load (0.4ms)[0m  [1m[34mSELECT  "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ? AND "line_items"."product_id" = ? LIMIT ?[0m  [["cart_id", 7], ["product_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (4.5ms)[0m  [1m[33mUPDATE "line_items" SET "quantity" = ?, "updated_at" = ? WHERE "line_items"."id" = ?[0m  [["quantity", 4], ["updated_at", "2020-04-13 09:08:52.090997"], ["id", 15]]
+  [1m[35m (124.7ms)[0m  [1m[36mcommit transaction[0m
+  Rendering line_items/create.js.coffee
+  [1m[36mLineItem Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "line_items" WHERE "line_items"."cart_id" = ? LIMIT ?[0m  [["cart_id", 7], ["LIMIT", 1]]
+  [1m[36mLineItem Load (0.5ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ?[0m  [["cart_id", 7]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered collection of line_items/_line_item.html.erb [3 times] (10.9ms)
+  Rendered carts/_cart.html.erb (21.9ms)
+  Rendered line_items/create.js.coffee (246.4ms)
+Completed 200 OK in 422ms (Views: 268.1ms | ActiveRecord: 132.3ms)
+
+
+Started DELETE "/carts/7" for ::1 at 2020-04-13 17:08:59 +0800
+Processing by CartsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"nSSrmPFsAmWYzOTgVKvwjWu1c5uZK7Y5LwCSA+MHIgXnHNAaZAWAYCtltGAkwuTR3J8nuyHhkWiAql8aWwPSiA==", "id"=>"7"}
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLineItem Load (1.0ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ?[0m  [["cart_id", 7]]
+  [1m[35mSQL (5.3ms)[0m  [1m[31mDELETE FROM "line_items" WHERE "line_items"."id" = ?[0m  [["id", 15]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "line_items" WHERE "line_items"."id" = ?[0m  [["id", 16]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "line_items" WHERE "line_items"."id" = ?[0m  [["id", 17]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "carts" WHERE "carts"."id" = ?[0m  [["id", 7]]
+  [1m[35m (139.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 161ms (ActiveRecord: 146.9ms)
+
+
+Started GET "/" for ::1 at 2020-04-13 17:09:00 +0800
+Processing by StoreController#index as HTML
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "carts" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-04-13 09:09:00.074946"], ["updated_at", "2020-04-13 09:09:00.074946"]]
+  [1m[35m (74.7ms)[0m  [1m[36mcommit transaction[0m
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (20.5ms)
+  [1m[36mLineItem Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "line_items" WHERE "line_items"."cart_id" = ? LIMIT ?[0m  [["cart_id", 8], ["LIMIT", 1]]
+Completed 200 OK in 246ms (Views: 156.8ms | ActiveRecord: 77.5ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2020-04-13 17:09:00 +0800
+Started GET "/cable" for ::1 at 2020-04-13 17:09:00 +0800
+Started GET "/cable/" [WebSocket] for ::1 at 2020-04-13 17:09:00 +0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Subscription class not found: "ProductsChannel"
+Started POST "/line_items?product_id=1" for ::1 at 2020-04-13 17:09:02 +0800
+Processing by LineItemsController#create as JS
+  Parameters: {"authenticity_token"=>"aRzZk+FWyLdjpHohdPbpLbnHix0TvVlTpcNQUg9/Jc6pcen60jjRNgA2gAkWxl+lvl8DKCdGbJLtS7Z6sInfiQ==", "product_id"=>"1"}
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLineItem Load (0.3ms)[0m  [1m[34mSELECT  "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ? AND "line_items"."product_id" = ? LIMIT ?[0m  [["cart_id", 8], ["product_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (4.7ms)[0m  [1m[32mINSERT INTO "line_items" ("product_id", "cart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 1], ["cart_id", 8], ["created_at", "2020-04-13 09:09:02.180983"], ["updated_at", "2020-04-13 09:09:02.180983"]]
+  [1m[35m (125.7ms)[0m  [1m[36mcommit transaction[0m
+  Rendering line_items/create.js.coffee
+  [1m[36mLineItem Load (0.3ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ?[0m  [["cart_id", 8]]
+  Rendered collection of line_items/_line_item.html.erb [1 times] (1.0ms)
+  Rendered carts/_cart.html.erb (8.2ms)
+  Rendered line_items/create.js.coffee (189.7ms)
+Completed 200 OK in 360ms (Views: 201.9ms | ActiveRecord: 131.9ms)
+
+
+Started POST "/line_items?product_id=1" for ::1 at 2020-04-13 17:09:05 +0800
+Processing by LineItemsController#create as JS
+  Parameters: {"authenticity_token"=>"aRzZk+FWyLdjpHohdPbpLbnHix0TvVlTpcNQUg9/Jc6pcen60jjRNgA2gAkWxl+lvl8DKCdGbJLtS7Z6sInfiQ==", "product_id"=>"1"}
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLineItem Load (0.3ms)[0m  [1m[34mSELECT  "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ? AND "line_items"."product_id" = ? LIMIT ?[0m  [["cart_id", 8], ["product_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[33mUPDATE "line_items" SET "quantity" = ?, "updated_at" = ? WHERE "line_items"."id" = ?[0m  [["quantity", 2], ["updated_at", "2020-04-13 09:09:05.827388"], ["id", 18]]
+  [1m[35m (71.4ms)[0m  [1m[36mcommit transaction[0m
+  Rendering line_items/create.js.coffee
+  [1m[36mLineItem Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "line_items" WHERE "line_items"."cart_id" = ? LIMIT ?[0m  [["cart_id", 8], ["LIMIT", 1]]
+  [1m[36mLineItem Load (0.4ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ?[0m  [["cart_id", 8]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of line_items/_line_item.html.erb [1 times] (3.8ms)
+  Rendered carts/_cart.html.erb (16.0ms)
+  Rendered line_items/create.js.coffee (217.4ms)
+Completed 200 OK in 381ms (Views: 228.2ms | ActiveRecord: 74.8ms)
+
+
+Started POST "/line_items?product_id=3" for ::1 at 2020-04-13 17:09:08 +0800
+Processing by LineItemsController#create as JS
+  Parameters: {"authenticity_token"=>"aRzZk+FWyLdjpHohdPbpLbnHix0TvVlTpcNQUg9/Jc6pcen60jjRNgA2gAkWxl+lvl8DKCdGbJLtS7Z6sInfiQ==", "product_id"=>"3"}
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mLineItem Load (0.5ms)[0m  [1m[34mSELECT  "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ? AND "line_items"."product_id" = ? LIMIT ?[0m  [["cart_id", 8], ["product_id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (34.2ms)[0m  [1m[32mINSERT INTO "line_items" ("product_id", "cart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 3], ["cart_id", 8], ["created_at", "2020-04-13 09:09:08.223921"], ["updated_at", "2020-04-13 09:09:08.223921"]]
+  [1m[35m (149.0ms)[0m  [1m[36mcommit transaction[0m
+  Rendering line_items/create.js.coffee
+  [1m[36mLineItem Load (0.2ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ?[0m  [["cart_id", 8]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of line_items/_line_item.html.erb [2 times] (3.4ms)
+  Rendered carts/_cart.html.erb (11.6ms)
+  Rendered line_items/create.js.coffee (182.1ms)
+Completed 200 OK in 427ms (Views: 218.3ms | ActiveRecord: 185.2ms)
+
+
+Started POST "/line_items?product_id=1" for ::1 at 2020-04-13 17:09:16 +0800
+Processing by LineItemsController#create as JS
+  Parameters: {"authenticity_token"=>"aRzZk+FWyLdjpHohdPbpLbnHix0TvVlTpcNQUg9/Jc6pcen60jjRNgA2gAkWxl+lvl8DKCdGbJLtS7Z6sInfiQ==", "product_id"=>"1"}
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLineItem Load (0.4ms)[0m  [1m[34mSELECT  "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ? AND "line_items"."product_id" = ? LIMIT ?[0m  [["cart_id", 8], ["product_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[33mUPDATE "line_items" SET "quantity" = ?, "updated_at" = ? WHERE "line_items"."id" = ?[0m  [["quantity", 3], ["updated_at", "2020-04-13 09:09:16.251868"], ["id", 18]]
+  [1m[35m (102.4ms)[0m  [1m[36mcommit transaction[0m
+  Rendering line_items/create.js.coffee
+  [1m[36mLineItem Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "line_items" WHERE "line_items"."cart_id" = ? LIMIT ?[0m  [["cart_id", 8], ["LIMIT", 1]]
+  [1m[36mLineItem Load (0.6ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ?[0m  [["cart_id", 8]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered collection of line_items/_line_item.html.erb [2 times] (6.6ms)
+  Rendered carts/_cart.html.erb (22.4ms)
+  Rendered line_items/create.js.coffee (196.2ms)
+Completed 200 OK in 335ms (Views: 212.5ms | ActiveRecord: 106.4ms)
+
+
+Started POST "/line_items?product_id=2" for ::1 at 2020-04-13 17:09:18 +0800
+Processing by LineItemsController#create as JS
+  Parameters: {"authenticity_token"=>"aRzZk+FWyLdjpHohdPbpLbnHix0TvVlTpcNQUg9/Jc6pcen60jjRNgA2gAkWxl+lvl8DKCdGbJLtS7Z6sInfiQ==", "product_id"=>"2"}
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLineItem Load (0.4ms)[0m  [1m[34mSELECT  "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ? AND "line_items"."product_id" = ? LIMIT ?[0m  [["cart_id", 8], ["product_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (4.6ms)[0m  [1m[32mINSERT INTO "line_items" ("product_id", "cart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 2], ["cart_id", 8], ["created_at", "2020-04-13 09:09:18.323537"], ["updated_at", "2020-04-13 09:09:18.323537"]]
+  [1m[35m (131.7ms)[0m  [1m[36mcommit transaction[0m
+  Rendering line_items/create.js.coffee
+  [1m[36mLineItem Load (0.3ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ?[0m  [["cart_id", 8]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered collection of line_items/_line_item.html.erb [3 times] (5.6ms)
+  Rendered carts/_cart.html.erb (12.8ms)
+  Rendered line_items/create.js.coffee (179.2ms)
+Completed 200 OK in 360ms (Views: 204.8ms | ActiveRecord: 138.5ms)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateOrders (20200414003055)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "orders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "address" text, "email" varchar, "pay_type" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200414003055"]]
+  [1m[35m (175.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddOrderToLineItem (20200414003139)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.9ms)[0m  [1m[35mALTER TABLE "line_items" ADD "order_id" integer[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_line_items_on_cart_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_line_items_on_cart_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_line_items_on_product_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_line_items_on_product_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_line_items_on_order_id" ON "line_items" ("order_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200414003139"]]
+  [1m[35m (97.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_line_items_on_order_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_line_items_on_order_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_line_items_on_cart_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_line_items_on_cart_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_line_items_on_product_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_line_items_on_product_id' AND type='index'
+[0m
+Started GET "/" for ::1 at 2020-04-14 09:45:23 +0800
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StoreController#index as HTML
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.2ms)[0m  [1m[32mINSERT INTO "carts" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-04-14 01:45:25.919547"], ["updated_at", "2020-04-14 01:45:25.919547"]]
+  [1m[35m (127.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (2778.6ms)
+  [1m[36mLineItem Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "line_items" WHERE "line_items"."cart_id" = ? LIMIT ?[0m  [["cart_id", 9], ["LIMIT", 1]]
+Completed 200 OK in 3515ms (Views: 3233.4ms | ActiveRecord: 135.3ms)
+
+
+Started GET "/cable" for ::1 at 2020-04-14 09:45:30 +0800
+Started GET "/cable/" [WebSocket] for ::1 at 2020-04-14 09:45:31 +0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Subscription class not found: "ProductsChannel"
+Started POST "/line_items?product_id=1" for ::1 at 2020-04-14 09:45:50 +0800
+Processing by LineItemsController#create as JS
+  Parameters: {"authenticity_token"=>"q7SHPt7JcB5FANNRgBtPuhP0mq8JYYBqHleEc8iMn1wLnIzEXrRB1esaenm1aTkuo3s1jyg471r2ke9/gpWX5w==", "product_id"=>"1"}
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLineItem Load (0.3ms)[0m  [1m[34mSELECT  "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ? AND "line_items"."product_id" = ? LIMIT ?[0m  [["cart_id", 9], ["product_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "line_items" ("product_id", "cart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 1], ["cart_id", 9], ["created_at", "2020-04-14 01:45:50.762065"], ["updated_at", "2020-04-14 01:45:50.762065"]]
+  [1m[35m (67.2ms)[0m  [1m[36mcommit transaction[0m
+  Rendering line_items/create.js.coffee
+  [1m[36mLineItem Load (0.7ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ?[0m  [["cart_id", 9]]
+  Rendered collection of line_items/_line_item.html.erb [1 times] (2.5ms)
+  Rendered carts/_cart.html.erb (54.2ms)
+  Rendered line_items/create.js.coffee (1107.3ms)
+Completed 200 OK in 1267ms (Views: 1126.2ms | ActiveRecord: 71.4ms)
+
+
+Started POST "/line_items?product_id=3" for ::1 at 2020-04-14 09:45:59 +0800
+Processing by LineItemsController#create as JS
+  Parameters: {"authenticity_token"=>"q7SHPt7JcB5FANNRgBtPuhP0mq8JYYBqHleEc8iMn1wLnIzEXrRB1esaenm1aTkuo3s1jyg471r2ke9/gpWX5w==", "product_id"=>"3"}
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mLineItem Load (0.4ms)[0m  [1m[34mSELECT  "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ? AND "line_items"."product_id" = ? LIMIT ?[0m  [["cart_id", 9], ["product_id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (4.7ms)[0m  [1m[32mINSERT INTO "line_items" ("product_id", "cart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 3], ["cart_id", 9], ["created_at", "2020-04-14 01:45:59.633519"], ["updated_at", "2020-04-14 01:45:59.633519"]]
+  [1m[35m (173.9ms)[0m  [1m[36mcommit transaction[0m
+  Rendering line_items/create.js.coffee
+  [1m[36mLineItem Load (0.3ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ?[0m  [["cart_id", 9]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of line_items/_line_item.html.erb [2 times] (7.0ms)
+  Rendered carts/_cart.html.erb (22.3ms)
+  Rendered line_items/create.js.coffee (226.0ms)
+Completed 200 OK in 437ms (Views: 237.5ms | ActiveRecord: 180.3ms)
+
+
+Started POST "/line_items?product_id=2" for ::1 at 2020-04-14 09:46:03 +0800
+Processing by LineItemsController#create as JS
+  Parameters: {"authenticity_token"=>"q7SHPt7JcB5FANNRgBtPuhP0mq8JYYBqHleEc8iMn1wLnIzEXrRB1esaenm1aTkuo3s1jyg471r2ke9/gpWX5w==", "product_id"=>"2"}
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLineItem Load (1.0ms)[0m  [1m[34mSELECT  "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ? AND "line_items"."product_id" = ? LIMIT ?[0m  [["cart_id", 9], ["product_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (4.6ms)[0m  [1m[32mINSERT INTO "line_items" ("product_id", "cart_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 2], ["cart_id", 9], ["created_at", "2020-04-14 01:46:03.421956"], ["updated_at", "2020-04-14 01:46:03.421956"]]
+  [1m[35m (141.9ms)[0m  [1m[36mcommit transaction[0m
+  Rendering line_items/create.js.coffee
+  [1m[36mLineItem Load (0.4ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ?[0m  [["cart_id", 9]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered collection of line_items/_line_item.html.erb [3 times] (6.4ms)
+  Rendered carts/_cart.html.erb (20.5ms)
+  Rendered line_items/create.js.coffee (235.9ms)
+Completed 200 OK in 431ms (Views: 260.7ms | ActiveRecord: 149.6ms)
+
+
+Started GET "/orders/new" for ::1 at 2020-04-14 09:46:17 +0800
+Processing by OrdersController#new as HTML
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mLineItem Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "line_items" WHERE "line_items"."cart_id" = ? LIMIT ?[0m  [["cart_id", 9], ["LIMIT", 1]]
+  Rendering orders/new.html.erb within layouts/application
+  Rendered orders/_form.html.erb (115.1ms)
+  Rendered orders/new.html.erb within layouts/application (119.9ms)
+  [1m[36mCACHE LineItem Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "line_items" WHERE "line_items"."cart_id" = ? LIMIT ?[0m  [["cart_id", 9], ["LIMIT", 1]]
+  [1m[36mLineItem Load (0.4ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ?[0m  [["cart_id", 9]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered collection of line_items/_line_item.html.erb [3 times] (15.8ms)
+  Rendered carts/_cart.html.erb (29.8ms)
+Completed 200 OK in 336ms (Views: 289.7ms | ActiveRecord: 3.6ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2020-04-14 09:46:18 +0800
+Started GET "/cable" for ::1 at 2020-04-14 09:46:18 +0800
+Started GET "/cable/" [WebSocket] for ::1 at 2020-04-14 09:46:18 +0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Subscription class not found: "ProductsChannel"
+Started POST "/orders" for ::1 at 2020-04-14 10:19:44 +0800
+Processing by OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+Q2UfqEwbWKHg9WdM7fM4G9IauGfxB0E5Xb9/jQnsR1ZJZ+EIU1cqSmZfLUGxbp038fFwb6dcjQNsJbyfj65pg==", "order"=>{"name"=>"", "address"=>"", "email"=>"", "pay_type"=>""}, "commit"=>"Place Order"}
+  [1m[36mCart Load (0.6ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mLineItem Load (2.5ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ?[0m  [["cart_id", 9]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  Rendering orders/new.html.erb within layouts/application
+  Rendered orders/_form.html.erb (16.3ms)
+  Rendered orders/new.html.erb within layouts/application (28.1ms)
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered collection of line_items/_line_item.html.erb [3 times] (168.2ms)
+  Rendered carts/_cart.html.erb (193.4ms)
+Completed 200 OK in 786ms (Views: 511.7ms | ActiveRecord: 24.5ms)
+
+
+Started GET "/cable" for ::1 at 2020-04-14 10:19:46 +0800
+Started GET "/cable/" [WebSocket] for ::1 at 2020-04-14 10:19:46 +0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Subscription class not found: "ProductsChannel"
+Started POST "/orders" for ::1 at 2020-04-14 10:27:08 +0800
+Processing by OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wWTt0QiOU70EVl3bSd9e9QJ9fvHgjeZsnCHQS0KurDphTOYriPNidqpM9PN8rShhsvLR0cHUiVx057tHCLekgQ==", "order"=>{"name"=>"Pat Jones", "address"=>"123 Any St,\r\nSpringfield, VA 90210", "email"=>"pat@example.com", "pay_type"=>"Check"}, "commit"=>"Place Order"}
+  [1m[36mCart Load (0.7ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mLineItem Load (3.9ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ?[0m  [["cart_id", 9]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (14.4ms)[0m  [1m[32mINSERT INTO "orders" ("name", "address", "email", "pay_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Pat Jones"], ["address", "123 Any St,\r\nSpringfield, VA 90210"], ["email", "pat@example.com"], ["pay_type", 0], ["created_at", "2020-04-14 02:27:09.061870"], ["updated_at", "2020-04-14 02:27:09.061870"]]
+  [1m[35mSQL (51.9ms)[0m  [1m[33mUPDATE "line_items" SET "cart_id" = ?, "order_id" = ?, "updated_at" = ? WHERE "line_items"."id" = ?[0m  [["cart_id", nil], ["order_id", 1], ["updated_at", "2020-04-14 02:27:09.087434"], ["id", 21]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "line_items" SET "cart_id" = ?, "order_id" = ?, "updated_at" = ? WHERE "line_items"."id" = ?[0m  [["cart_id", nil], ["order_id", 1], ["updated_at", "2020-04-14 02:27:09.200556"], ["id", 22]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "line_items" SET "cart_id" = ?, "order_id" = ?, "updated_at" = ? WHERE "line_items"."id" = ?[0m  [["cart_id", nil], ["order_id", 1], ["updated_at", "2020-04-14 02:27:09.254146"], ["id", 23]]
+  [1m[35m (101.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCart Load (0.8ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLineItem Load (0.3ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ?[0m  [["cart_id", 9]]
+  [1m[35mSQL (5.8ms)[0m  [1m[31mDELETE FROM "carts" WHERE "carts"."id" = ?[0m  [["id", 9]]
+  [1m[35m (70.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 524ms (ActiveRecord: 250.6ms)
+
+
+Started GET "/" for ::1 at 2020-04-14 10:27:09 +0800
+Processing by StoreController#index as HTML
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.7ms)[0m  [1m[32mINSERT INTO "carts" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-04-14 02:27:09.633991"], ["updated_at", "2020-04-14 02:27:09.633991"]]
+  [1m[35m (74.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (31.7ms)
+  [1m[36mLineItem Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "line_items" WHERE "line_items"."cart_id" = ? LIMIT ?[0m  [["cart_id", 10], ["LIMIT", 1]]
+Completed 200 OK in 329ms (Views: 222.8ms | ActiveRecord: 81.6ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2020-04-14 10:27:10 +0800
+Started GET "/cable" for ::1 at 2020-04-14 10:27:10 +0800
+Started GET "/cable/" [WebSocket] for ::1 at 2020-04-14 10:27:10 +0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Subscription class not found: "ProductsChannel"
+Started GET "/products/3/who_bought.atom" for ::1 at 2020-04-14 11:15:02 +0800
+  
+LocalJumpError (no block given (yield)):
+  
+config/routes.rb:8:in `block (2 levels) in <top (required)>'
+config/routes.rb:7:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+Started GET "/cable" for ::1 at 2020-04-14 11:15:09 +0800
+Started GET "/cable/" [WebSocket] for ::1 at 2020-04-14 11:15:09 +0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Subscription class not found: "ProductsChannel"
