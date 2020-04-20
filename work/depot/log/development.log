@@ -3441,3 +3441,151 @@ Started GET "/cable" for ::1 at 2020-04-15 16:27:03 +0800
 Started GET "/cable/" [WebSocket] for ::1 at 2020-04-15 16:27:03 +0800
 Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
 Subscription class not found: "ProductsChannel"
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20200420010447)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200420010447"]]
+  [1m[35m (115.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_line_items_on_order_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_line_items_on_order_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_line_items_on_cart_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_line_items_on_cart_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_line_items_on_product_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_line_items_on_product_id' AND type='index'
+[0m
+Started GET "/" for ::1 at 2020-04-20 09:07:38 +0800
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StoreController#index as HTML
+  [1m[36mCart Load (0.5ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "carts" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-04-20 01:07:39.208402"], ["updated_at", "2020-04-20 01:07:39.208402"]]
+  [1m[35m (103.0ms)[0m  [1m[36mcommit transaction[0m
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (8821.4ms)
+  [1m[36mLineItem Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "line_items" WHERE "line_items"."cart_id" = ? LIMIT ?[0m  [["cart_id", 19], ["LIMIT", 1]]
+Completed 200 OK in 10141ms (Views: 9984.6ms | ActiveRecord: 108.6ms)
+
+
+Started GET "/cable" for ::1 at 2020-04-20 09:08:07 +0800
+Started GET "/cable/" [WebSocket] for ::1 at 2020-04-20 09:08:07 +0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Subscription class not found: "ProductsChannel"
+Started GET "/users" for ::1 at 2020-04-20 09:08:16 +0800
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."name" ASC[0m
+  Rendered users/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 116ms (Views: 108.0ms | ActiveRecord: 0.8ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2020-04-20 09:08:16 +0800
+Started GET "/cable" for ::1 at 2020-04-20 09:08:16 +0800
+Started GET "/cable/" [WebSocket] for ::1 at 2020-04-20 09:08:16 +0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Subscription class not found: "ProductsChannel"
+Started GET "/users/new" for ::1 at 2020-04-20 09:08:19 +0800
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (19.0ms)
+  Rendered users/new.html.erb within layouts/application (22.7ms)
+Completed 200 OK in 182ms (Views: 172.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/users" for ::1 at 2020-04-20 09:08:27 +0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nSoIpcTvJoVUCAWmuXocgIEGuZIE0AVlM9PnHoMLTLLWhV3hzkwkBhBIOCcBrKvLIr/MEd6JYNvxXZRwc6SIvQ==", "user"=>{"name"=>"dave", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "dave"], ["LIMIT", 1]]
+  [1m[35mSQL (4.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "dave"], ["password_digest", "$2a$12$Q5r3lsI56O7sGN5Rzp2Hie/iSO3dX0i9auyPaufWNXC7HmliWKKQO"], ["created_at", "2020-04-20 01:08:27.954625"], ["updated_at", "2020-04-20 01:08:27.954625"]]
+  [1m[35m (116.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 450ms (ActiveRecord: 121.5ms)
+
+
+Started GET "/users" for ::1 at 2020-04-20 09:08:28 +0800
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."name" ASC[0m
+  Rendered users/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 84ms (Views: 80.1ms | ActiveRecord: 0.3ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2020-04-20 09:08:28 +0800
+Started GET "/cable" for ::1 at 2020-04-20 09:08:28 +0800
+Started GET "/cable/" [WebSocket] for ::1 at 2020-04-20 09:08:28 +0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Subscription class not found: "ProductsChannel"
+Started GET "/users" for ::1 at 2020-04-20 09:35:43 +0800
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 90ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/login" for ::1 at 2020-04-20 09:35:44 +0800
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 263ms (Views: 257.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cable" for ::1 at 2020-04-20 09:35:45 +0800
+Started GET "/cable/" [WebSocket] for ::1 at 2020-04-20 09:35:45 +0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Subscription class not found: "ProductsChannel"
+Started POST "/login" for ::1 at 2020-04-20 09:35:49 +0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F3dT0anKTIPGkpqoeD868/JvortvMfMv/ixzg6ucHXantca3hVRluCKS2tdAsbb87pQDcobizk0Mtmfnx+09AQ==", "name"=>"dave", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "dave"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 351ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/admin" for ::1 at 2020-04-20 09:35:50 +0800
+Processing by AdminController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders"[0m
+  Rendering admin/index.html.erb within layouts/application
+  Rendered admin/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 134ms (Views: 114.5ms | ActiveRecord: 1.1ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2020-04-20 09:35:50 +0800
+Started GET "/cable" for ::1 at 2020-04-20 09:35:50 +0800
+Started GET "/cable/" [WebSocket] for ::1 at 2020-04-20 09:35:50 +0800
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Subscription class not found: "ProductsChannel"
+Started GET "/users" for ::1 at 2020-04-20 09:35:52 +0800
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."name" ASC[0m
+  Rendered users/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 132ms (Views: 126.0ms | ActiveRecord: 0.7ms)
+
+
