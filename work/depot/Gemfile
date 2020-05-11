@@ -36,6 +36,12 @@ gem 'activemodel-serializers-xml'
 
 gem 'i18n-js'
 
+# Use devise for user registration/authentication
+gem 'devise'
+
+# Use kaminari for pagination
+gem 'kaminari'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

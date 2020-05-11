@@ -1,0 +1,9 @@
+<% if page.current? %>
+  <span class='active'>
+    <%= content_tag :a, page, data: { remote: remote }, rel: page.rel %>
+  </span>
+<% else %>
+  <span>
+    <%= link_to page, url, remote: remote, rel: page.rel %>
+  </span>
+<% end %>

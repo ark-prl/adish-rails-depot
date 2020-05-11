@@ -5,6 +5,7 @@
 <h1><%= t('.title_html') %></h1>
 
 <ul class="catalog">
+  <%= paginate @products %>
   <% cache @products do %>
     <% @products.each do |product| %>
       <% cache product do %>
@@ -23,4 +24,5 @@
       <% end %>
     <% end %>
   <% end %>
+  <%= paginate @products %>
 </ul>
